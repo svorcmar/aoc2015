@@ -64,7 +64,7 @@ fun main() {
 }
 
 fun enqueue(newState: State?, queue: TreeSet<State>) {
-  if (newState != null/* todo: nemelo by byt potreba - znamenalo by negativni cykly && visitedStates.add(newState)*/) {
+  if (newState != null) {
     val prevQueued = queue.lower(newState)
     if (prevQueued == null || prevQueued != newState || prevQueued.manaSpent > newState.manaSpent) {
       queue.remove(newState)
