@@ -3,7 +3,7 @@ fun main() {
   val list = input.lines().map { it.toInt() }
   val groupSize = list.sum() / 3
   val firstGroup = solve(list, groupSize)
-  // order by quantum entanglement and find smallest on for which
+  // order by quantum entanglement and find smallest one for which
   // the rest of packages can be divided in two groups of the same weight
   val candidates = firstGroup.map { it.map(Int::toLong).reduce(Long::times) to it }.sortedBy { it.first }
   for (candidate in candidates) {
